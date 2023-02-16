@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2023/01/11 17:05:53.000.126,=C:\Audrey\Delphi\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/01/11 17:06:43.000.498,=C:\Audrey\Delphi\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/01/11 17:13:05.000.854,=C:\Audrey\Delphi\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/01/11 17:23:09.000.435,=C:\Audrey\Delphi\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/02/01 16:51:27.000.262,=C:\Audrey\Delphi\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/02/01 16:53:08.000.466,C:\Audrey\Projetos\DonnaGlam\untLogin.pas=C:\Audrey\Delphi\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/02/01 16:53:08.000.466,C:\Audrey\Projetos\DonnaGlam\untLogin.fmx=C:\Audrey\Delphi\Projects\Unit1.fmx</Transaction>
+    <Transaction>2023/02/01 16:53:16.000.474,C:\Audrey\Projetos\DonnaGlam\DonnaGlam.dproj=C:\Audrey\Delphi\Projects\Project1.dproj</Transaction>
+    <Transaction>2023/02/01 17:15:15.000.904,=C:\Audrey\Projetos\DonnaGlam\Mobile\Unit1.pas</Transaction>
+    <Transaction>2023/02/01 17:15:42.000.913,C:\Audrey\Projetos\DonnaGlam\Mobile\Unit1.pas=C:\Audrey\Projetos\DonnaGlam\Mobile\untPrincipal.pas</Transaction>
+    <Transaction>2023/02/01 17:15:42.000.913,C:\Audrey\Projetos\DonnaGlam\Mobile\Unit1.fmx=C:\Audrey\Projetos\DonnaGlam\Mobile\untPrincipal.fmx</Transaction>
+    <Transaction>2023/02/01 17:43:38.000.393,=C:\Audrey\Projetos\DonnaGlam\Mobile\Unit1.pas</Transaction>
+    <Transaction>2023/02/01 17:44:47.000.166,C:\Audrey\Projetos\DonnaGlam\Mobile\Unit1.fmx=C:\Audrey\Projetos\DonnaGlam\Mobile\untCategorias.fmx</Transaction>
+    <Transaction>2023/02/01 17:44:47.000.166,C:\Audrey\Projetos\DonnaGlam\Mobile\Unit1.pas=C:\Audrey\Projetos\DonnaGlam\Mobile\untCategorias.pas</Transaction>
+    <Transaction>2023/02/02 10:00:16.719,=C:\Audrey\Projetos\DonnaGlam\Mobile\Unit1.pas</Transaction>
+    <Transaction>2023/02/02 10:02:34.467,C:\Audrey\Projetos\DonnaGlam\Mobile\untCadProdutos.pas=C:\Audrey\Projetos\DonnaGlam\Mobile\Unit1.pas</Transaction>
+    <Transaction>2023/02/02 10:02:34.467,C:\Audrey\Projetos\DonnaGlam\Mobile\untCadProdutos.fmx=C:\Audrey\Projetos\DonnaGlam\Mobile\Unit1.fmx</Transaction>
+  </Transactions>
+	<ActiveMobileDevice>
+		<NoProfile iOSSimulator="iPhone5"/>
+	</ActiveMobileDevice>
+</BorlandProject>

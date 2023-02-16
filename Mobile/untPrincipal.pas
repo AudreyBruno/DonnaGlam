@@ -1,0 +1,92 @@
+unit untPrincipal;
+
+interface
+
+uses
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Objects,
+  FMX.Controls.Presentation, FMX.StdCtrls, FMX.Layouts, FMX.Edit,
+  FMX.ListView.Types, FMX.ListView.Appearances, FMX.ListView.Adapters.Base,
+  FMX.ListView;
+
+type
+  TfrmPrincipal = class(TForm)
+    Layout1: TLayout;
+    Label1: TLabel;
+    Image1: TImage;
+    StyleBook: TStyleBook;
+    btnLogin: TButton;
+    LayoutPesquisa: TLayout;
+    RectPesquisar: TRectangle;
+    edtBuscaMercado: TEdit;
+    Image3: TImage;
+    btnBuscar: TButton;
+    ListViewProdutos: TListView;
+    procedure FormShow(Sender: TObject);
+    procedure btnLoginClick(Sender: TObject);
+    procedure Image1Click(Sender: TObject);
+  private
+    procedure AddProdutosLv(id: integer; nome: string);
+    procedure ListarProdutos;
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmPrincipal: TfrmPrincipal;
+
+implementation
+
+{$R *.fmx}
+
+uses untCategorias, untCadProdutos;
+
+procedure TfrmPrincipal.AddProdutosLv(id: integer; nome: string);
+var
+  img: TListItemImage;
+  txt: TListItemText;
+begin
+  with  ListViewProdutos.Items.Add do
+    begin
+      Height := 45;
+      Tag := id;
+
+      txt := TListItemText(Objects.FindDrawable('txtNomeProduto'));
+      txt.Text := nome;
+    end;
+end;
+
+procedure TfrmPrincipal.ListarProdutos;
+begin
+  ListViewProdutos.Items.Clear;
+
+  AddProdutosLv(1, 'Teste 1');
+  AddProdutosLv(2, 'Teste 2');
+  AddProdutosLv(3, 'Teste 3');
+  AddProdutosLv(4, 'Teste 4');
+  AddProdutosLv(5, 'Teste 5');
+end;
+
+procedure TfrmPrincipal.btnLoginClick(Sender: TObject);
+begin
+  if not Assigned(frmCategorias) then
+    Application.CreateForm(TfrmCategorias, frmCategorias);
+
+  frmCategorias.Show;
+end;
+
+procedure TfrmPrincipal.FormShow(Sender: TObject);
+begin
+  ListarProdutos
+end;
+
+procedure TfrmPrincipal.Image1Click(Sender: TObject);
+begin
+  if not Assigned(frmCadProdutos) then
+    Application.CreateForm(TfrmCadProdutos, frmCadProdutos);
+
+  frmCadProdutos.Show;
+end;
+
+end.

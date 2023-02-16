@@ -1,0 +1,33 @@
+unit untLogin;
+
+interface
+
+uses
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Objects,
+  FMX.Controls.Presentation, FMX.Edit, FMX.Layouts, FMX.StdCtrls;
+
+type
+  TfrmLogin = class(TForm)
+    imgLogo: TImage;
+    layoutLogin: TLayout;
+    rectUser: TRectangle;
+    edtLogin: TEdit;
+    StyleBookLogin: TStyleBook;
+    rectSenha: TRectangle;
+    edtSenha: TEdit;
+    btnLogin: TButton;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmLogin: TfrmLogin;
+
+implementation
+
+{$R *.fmx}
+
+end.

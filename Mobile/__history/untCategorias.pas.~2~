@@ -1,0 +1,39 @@
+unit untCategorias;
+
+interface
+
+uses
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs,
+  FMX.ListView.Types, FMX.ListView.Appearances, FMX.ListView.Adapters.Base,
+  FMX.ListView, FMX.Edit, FMX.Objects, FMX.StdCtrls, FMX.Layouts,
+  FMX.Controls.Presentation;
+
+type
+  TForm1 = class(TForm)
+    btnLogin: TButton;
+    Layout1: TLayout;
+    Label1: TLabel;
+    Image1: TImage;
+    LayoutPesquisa: TLayout;
+    RectPesquisar: TRectangle;
+    edtBuscaMercado: TEdit;
+    Image3: TImage;
+    btnBuscar: TButton;
+    ListViewProdutos: TListView;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.fmx}
+
+uses untPrincipal;
+
+end.

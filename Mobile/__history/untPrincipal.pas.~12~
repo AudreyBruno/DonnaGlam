@@ -1,0 +1,91 @@
+unit untPrincipal;
+
+interface
+
+uses
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Objects,
+  FMX.Controls.Presentation, FMX.StdCtrls, FMX.Layouts, FMX.Edit,
+  FMX.ListView.Types, FMX.ListView.Appearances, FMX.ListView.Adapters.Base,
+  FMX.ListView;
+
+type
+  TfrmPrincipal = class(TForm)
+    Layout1: TLayout;
+    Label1: TLabel;
+    Image1: TImage;
+    StyleBook: TStyleBook;
+    btnLogin: TButton;
+    LayoutPesquisa: TLayout;
+    RectPesquisar: TRectangle;
+    edtBuscaMercado: TEdit;
+    Image3: TImage;
+    btnBuscar: TButton;
+    ListViewProdutos: TListView;
+  private
+    procedure AddProdutosLv(id: integer; nome: string);
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmPrincipal: TfrmPrincipal;
+
+implementation
+
+{$R *.fmx}
+
+procedure TfrmPrincipal.AddProdutosLv(id: integer; nome: string);
+var
+  img: TListItemImage;
+  txt: TListItemText;
+begin
+  with  ListViewProdutos.Items.Add do
+    begin
+      Height := 45;
+      Tag := id;
+
+      txt := TListItemText(Objects.FindDrawable('txtNomeProduto'));
+      txt.Text := nome;
+    end;
+end;
+
+procedure TfrmPrincipal.ListarMercados;
+var
+  t: TThread;
+begin
+  TLoading.Show(frmPrincipal, '');
+
+  ListViewMercados.Items.Clear;
+  ListViewMercados.BeginUpdate;
+
+  t := TThread.CreateAnonymousThread(procedure
+  var
+    i: integer;
+  begin
+    DmMercados.ListarMercados(edtBuscaMercado.Text, Ind_Entrega, Ind_Retira);
+
+    with DmMercados.TabMercado do
+      begin
+        for i := 0 to RecordCount - 1 do
+          begin
+            TThread.Synchronize(TThread.CurrentThread, procedure
+                begin
+                  AddMercadosLv(FieldByName('id_mercado').AsInteger,
+                                FieldByName('nome').AsString,
+                                FieldByName('endereco').AsString,
+                                FieldByName('vl_entrega').AsFloat,
+                                FieldByName('vl_compra_min').AsFloat);
+                end);
+
+            Next;
+          end;
+      end;
+  end);
+
+  t.OnTerminate := ThreadMercadosTerminate;
+  t.Start;
+end;
+
+end.
